@@ -1,0 +1,212 @@
+/*BEGIN STARTER CSS - DO NOT CHANGE*/
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+  background-color: #737372;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+h1{
+  font-size: 50px;
+  line-height: 1;
+  padding: 50px 0;
+  text-align: center;
+}
+
+h2{
+  font-size: 32px;
+  line-height: 1.5;
+}
+
+nav li{
+  display:inline;
+  padding-right:20px;
+
+}
+
+
+nav{
+  background-color: #ddd;
+  padding: 25px 0; 
+  text-align: left;
+}
+
+footer{
+  background-color: black;
+  color: white;
+  padding-top: 30px;
+  text-align: center;
+}
+
+header p{
+  color: white;
+  font-size: 24px;
+  padding: 0 100px;
+  text-align: center;
+}
+/*END STARTER CSS - DO NO CHANGE*/
+
+
+/*Req 1*/
+nav a{
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/*Req 2*/
+/*Write selector/rule property to add an underline when
+links in the navigation are in the hover state.*/
+nav a:hover{
+  text-decoration: underline;
+}
+
+/*Req 3a*/
+.skip a{
+  background: white;
+  left: 0;
+  padding: 7px;
+  -webkit-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+  z-index: 1;
+  position: absolute;
+  top: -50px;
+}
+
+/*Req 3b*/
+/*Write selector/rule property to position the skip class element*/
+.skip a:focus{
+  top: 10px;
+}
+
+/*Req 4*/
+/*Write selector/rule property to style all elements when in focus*/
+:focus {
+  border-top: 2px dashed;
+  border-bottom: 2px dashed;
+}
+
+/*Req 5*/
+.container{
+  display: grid;
+  grid-template-columns: 1fr 3fr 3fr 1fr;
+  grid-template-rows: auto auto auto auto;
+  row-gap: 20px;
+}
+
+header{
+  background-attachment: fixed; /* Parallax effect */     
+  background-position: center;  /* Parallax effect */
+  background-repeat: no-repeat; /* Parallax effect */
+  background-size: cover;       /* Parallax effect */
+  color: white;
+  height: 400px;                /* Parallax effect */
+    
+  /*Req 6a*/
+  /*Set margin */
+  margin-bottom: 25px;
+    
+  /*Req 6b*/
+  /*Set background-image to header.jpg */
+  background-image: url("../images/header.jpg");
+}
+
+/*Req 7a*/
+.about, .method, .client, .contacts{
+  grid-column: 2 / span 2;
+}
+
+/*Req 8a, 8b, and 8c*/
+.about-image, .method-image, .client-image, .contact-image{
+  grid-column: 1 / -1;
+  max-height: 650px;
+  overflow: hidden;
+}
+
+/*Req 7b & 8d*/
+.about, .about-image{
+  grid-row: 1 / span 1;
+}
+
+/*Req 7b & 8d*/
+.method, .method-image{
+  grid-row: 2 / span 1;
+}
+
+/*Req 7b & 8d*/
+.client, .client-image{
+  grid-row: 3 / span 1;
+}
+
+/*Req 7b & 8d*/
+.contacts, .contact-image{
+  grid-row: 4 / span 1;
+}
+
+/*Req 9*/
+.text{
+  background-color: rgba(255, 255, 255, .8);
+  border: 10px solid black;
+  padding: 30px;
+  text-align: center;
+  align-self: center;
+}
+
+
+@media all and (min-width: 880px){
+    
+  img{
+     width:100%;
+  }
+    
+  /*Req 10*/
+  nav{
+    padding: 30px 0px;
+    text-align: right;
+    vertical-align: middle;
+  }
+
+  /*Req 11*/
+  .container{
+    display: grid;
+    grid-template-columns: 50px auto 500px auto 50px;
+    grid-template-rows: 400px 425px 425px 400px;
+  }
+
+  /*Req 12*/
+  .about, .client, .method-image, .contact-image{
+    grid-column: 3 / span 2;
+  }
+
+  /*Req 13*/
+  .about-image, .client-image, .method, .contacts{
+    grid-column: 2 / span 2;
+  }
+}
+
+
+
+/*You do not need to modify any code below this line.
+It is included for accessibility to turn off animations
+and movement for people who have modified their 
+preferences to reduce motion.*/
+
+@media screen and (prefers-reduced-motion: reduce){
+  html{
+      scroll-behavior: auto; /* Removes scroll animation */
+  }
+
+  .skip a{
+    -webkit-transition: none; /* sets to default setting */
+    transition: none;        /* sets to default setting */
+   }
+
+  /*Turn off parallax*/
+  header{
+    background-attachment: initial;
+  }
+}
